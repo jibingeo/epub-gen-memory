@@ -50,7 +50,7 @@ contentAlice.push({
   await writeFile(`${__filename.slice(0, -3)}.epub`, Buffer.from(content));
 
   contentAlice.push({
-    content: await fetch('http://example.com/').then(res => res.text()),
+    content: await fetch('https://example.com/').then(res => res.text()),
   });
   const content2 = await epub(optionsAlice, contentAlice);
   await writeFile(`${__filename.slice(0, -3)}_html.epub`, Buffer.from(content2));
