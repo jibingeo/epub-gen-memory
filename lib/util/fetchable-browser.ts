@@ -9,7 +9,7 @@ const fetchable = async (url: string, timeout: number) => {
     const res = await fetch(url, { signal: controller.signal });
     if (!res.ok)
       throw new Error(`Got error ${res.status} (${res.statusText}) while fetching ${url}`);
-    return res.blob();
+    return res.arrayBuffer();
   } finally {
     clearTimeout(out);
   }
